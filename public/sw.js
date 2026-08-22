@@ -1,16 +1,17 @@
-const CACHE_NAME = 'uj-portfolio-cache-v1';
+const CACHE_NAME = 'uj-portfolio-cache-v2';
 const ASSETS = [
   '/',
   '/index.html',
   '/favicon.svg',
+  '/icon-192x192.png',
+  '/icon-512x512.png',
   '/manifest.json',
   '/resume.pdf',
   '/marksheet_10th.pdf',
   '/marksheet_12th.pdf',
   '/btech_transcript.pdf',
   '/aws_certified_cloud_practitioner.pdf',
-  '/google_cloud_computing_foundation.pdf',
-  '/build_secure_google_cloud_network.pdf'
+  '/tbi_internship_certificate.jpg'
 ];
 
 // Install Event

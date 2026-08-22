@@ -1,16 +1,35 @@
 {
   "short_name": "UJ Portfolio",
   "name": "Ujjwal Pratap Singh — Portfolio",
+  "id": "/",
   "icons": [
     {
       "src": "/favicon.svg",
       "type": "image/svg+xml",
       "sizes": "any"
+    },
+    {
+      "src": "/icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
     }
   ],
   "start_url": "/",
+  "scope": "/",
   "background_color": "#09090b",
   "theme_color": "#f59e0b",
   "display": "standalone",
-  "orientation": "portrait"
+  "orientation": "portrait",
+  "description": "Portfolio of Ujjwal Pratap Singh — B.Tech CSE student building real-world software projects."
 }
