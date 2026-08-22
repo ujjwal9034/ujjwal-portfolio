@@ -204,13 +204,6 @@ export const certifications: Certification[] = [
     credentialLabel: 'TBI-GEU Internship Certificate',
   },
   {
-    title: 'AWS Certified Cloud Practitioner',
-    issuer: 'Amazon Web Services',
-    icon: 'aws',
-    credentialUrl: '/aws_certified_cloud_practitioner.pdf',
-    credentialLabel: 'AWS Certified Cloud Practitioner Certificate',
-  },
-  {
     title: 'Google Cloud Computing Foundation',
     issuer: 'Google Cloud',
     icon: 'gcp',
