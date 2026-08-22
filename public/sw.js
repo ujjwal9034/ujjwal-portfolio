@@ -36,20 +36,36 @@ self.addEventListener('activate', (e) => {
 
 // Fetch Event
 self.addEventListener('fetch', (e) => {
+  if (!e.request.url.startsWith('http')) return;
+
   e.respondWith(
     caches.match(e.request).then((cachedResponse) => {
       if (cachedResponse) {
-        // Fetch new version in the background to update the cache (stale-while-revalidate)
+        // stale-while-revalidate: return cache instantly, update in background
         fetch(e.request).then((networkResponse) => {
           if (networkResponse.status === 200) {
             caches.open(CACHE_NAME).then((cache) => {
               cache.put(e.request, networkResponse);
             });
           }
-        }).catch(() => { /* Ignore offline fetch errors */ });
+        }).catch(() => {});
         return cachedResponse;
       }
-      return fetch(e.request);
+
+      // Cache newly fetched assets dynamically
+      return fetch(e.request).then((networkResponse) => {
+        if (networkResponse.status === 200 && e.request.method === 'GET') {
+          const responseToCache = networkResponse.clone();
+          caches.open(CACHE_NAME).then((cache) => {
+            cache.put(e.request, responseToCache);
+          });
+        }
+        return networkResponse;
+      }).catch(() => {
+        if (e.request.mode === 'navigate') {
+          return caches.match('/index.html');
+        }
+      });
     })
   );
 });

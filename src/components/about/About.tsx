@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import profileImg from '../../assets/profile.jpg';
 import './About.css';
 
 const fadeInUp = {
@@ -27,30 +28,46 @@ export default function About() {
         viewport={{ once: true, margin: '-100px' }}
         variants={stagger}
       >
-        <motion.div className="about__text" variants={fadeInUp}>
-          <span className="section-label">// About</span>
-          <h2 id="about-title" className="section-title">
-            Who is Ujjwal?
-          </h2>
-          <p className="about__bio">
-            I'm a B.Tech Computer Science student at <strong>Graphic Era Deemed to Be University</strong>, Dehradun (currently in my 7th semester, graduating in 2027).
-            I enjoy building real-world tech projects across web-based and desktop environments.
-          </p>
-          <p className="about__bio about__bio--secondary">
-            Working with C, C++, Python, Java, and JavaScript/TypeScript, I enjoy solving complex problems through code, system design, and collaborative teamwork. I am responsible, curious, and always open to learning.
-          </p>
-        </motion.div>
+        <div className="about__content-left">
+          <motion.div className="about__text" variants={fadeInUp}>
+            <span className="section-label">// About</span>
+            <h2 id="about-title" className="section-title">
+              Who is Ujjwal?
+            </h2>
+            <p className="about__bio">
+              I'm a B.Tech Computer Science student at <strong>Graphic Era Deemed to Be University</strong>, Dehradun (currently in my 7th semester, graduating in 2027).
+              I enjoy building real-world tech projects across web-based and desktop environments.
+            </p>
+            <p className="about__bio about__bio--secondary">
+              Working with C, C++, Python, Java, and JavaScript/TypeScript, I enjoy solving complex problems through code, system design, and collaborative teamwork. I am responsible, curious, and always open to learning.
+            </p>
+          </motion.div>
 
-        <motion.div className="about__traits" variants={stagger}>
-          {traits.map((trait) => (
-            <motion.div key={trait.label} className="about__trait" variants={fadeInUp}>
-              <span className="about__trait-icon">{trait.icon}</span>
-              <div>
-                <h3 className="about__trait-label">{trait.label}</h3>
-                <p className="about__trait-desc">{trait.desc}</p>
-              </div>
-            </motion.div>
-          ))}
+          <motion.div className="about__traits" variants={stagger}>
+            {traits.map((trait) => (
+              <motion.div key={trait.label} className="about__trait" variants={fadeInUp}>
+                <span className="about__trait-icon">{trait.icon}</span>
+                <div>
+                  <h3 className="about__trait-label">{trait.label}</h3>
+                  <p className="about__trait-desc">{trait.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+
+        <motion.div 
+          className="about__image-wrapper"
+          variants={fadeInUp}
+        >
+          <div className="about__image-card">
+            <div className="about__image-inner">
+              <img src={profileImg} alt="Ujjwal Pratap Singh" className="about__img" />
+              <div className="about__image-overlay" />
+            </div>
+            <div className="about__image-glow" />
+            <div className="about__image-border" />
+          </div>
         </motion.div>
       </motion.div>
     </section>
