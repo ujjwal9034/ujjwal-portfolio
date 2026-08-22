@@ -173,6 +173,8 @@ export const timeline: TimelineEntry[] = [
     year: '2023',
     title: 'B.Tech CSE Commences',
     description: 'Pursuing Bachelor of Technology (B.Tech) in Computer Science Engineering at Graphic Era Deemed to Be University, Dehradun (Current CGPA: 8.39).',
+    downloadUrl: '/btech_transcript.pdf',
+    downloadLabel: 'Download Transcript (Sem 1-6)',
   },
   {
     year: '2024–2026',

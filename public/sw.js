@@ -6,7 +6,8 @@ const ASSETS = [
   '/manifest.json',
   '/resume.pdf',
   '/marksheet_10th.pdf',
-  '/marksheet_12th.pdf'
+  '/marksheet_12th.pdf',
+  '/btech_transcript.pdf'
 ];
 
 // Install Event
