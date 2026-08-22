@@ -159,11 +159,15 @@ export const timeline: TimelineEntry[] = [
     year: '2021',
     title: 'Class 10th Completed',
     description: 'Completed secondary education at Delhi Public School, Daulatpur.',
+    downloadUrl: '/marksheet_10th.pdf',
+    downloadLabel: 'Download 10th Marksheet',
   },
   {
     year: '2023',
     title: 'Class 12th Completed',
     description: 'Completed higher secondary education at Delhi Public School, Daulatpur.',
+    downloadUrl: '/marksheet_12th.pdf',
+    downloadLabel: 'Download 12th Marksheet',
   },
   {
     year: '2023',

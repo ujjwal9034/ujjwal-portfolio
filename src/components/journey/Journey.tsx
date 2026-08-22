@@ -44,6 +44,21 @@ export default function Journey() {
                 <span className="journey__year">{entry.year}</span>
                 <h3 className="journey__entry-title">{entry.title}</h3>
                 <p className="journey__entry-desc">{entry.description}</p>
+                {entry.downloadUrl && (
+                  <a
+                    href={entry.downloadUrl}
+                    download
+                    className="journey__download-btn"
+                    title={entry.downloadLabel}
+                  >
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="journey__download-icon">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                      <polyline points="7 10 12 15 17 10" />
+                      <line x1="12" y1="15" x2="12" y2="3" />
+                    </svg>
+                    <span>{entry.downloadLabel || 'Download Document'}</span>
+                  </a>
+                )}
               </div>
             </motion.div>
           ))}

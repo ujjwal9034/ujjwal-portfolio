@@ -18,6 +18,8 @@ export interface TimelineEntry {
   year: string;
   title: string;
   description: string;
+  downloadUrl?: string;
+  downloadLabel?: string;
 }
 
 export interface Certification {
