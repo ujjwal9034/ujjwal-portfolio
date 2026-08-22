@@ -2,10 +2,20 @@ import { motion } from 'framer-motion';
 import './ResumeModal.css';
 
 interface ResumeModalProps {
+  pdfPath?: string;
+  title?: string;
+  subtitle?: string;
+  downloadName?: string;
   onClose: () => void;
 }
 
-export default function ResumeModal({ onClose }: ResumeModalProps) {
+export default function ResumeModal({
+  pdfPath = '/resume.pdf',
+  title = 'Ujjwal Pratap Singh',
+  subtitle = 'Curriculum Vitae',
+  downloadName = 'Ujjwal_Pratap_Singh_Resume.pdf',
+  onClose,
+}: ResumeModalProps) {
   return (
     <motion.div
       className="resume-modal"
@@ -33,14 +43,14 @@ export default function ResumeModal({ onClose }: ResumeModalProps) {
       >
         <div className="resume-modal__header">
           <div>
-            <h3 id="resume-title" className="resume-modal__title">Ujjwal Pratap Singh</h3>
-            <p className="resume-modal__subtitle">Curriculum Vitae</p>
+            <h3 id="resume-title" className="resume-modal__title">{title}</h3>
+            <p className="resume-modal__subtitle">{subtitle}</p>
           </div>
           
           <div className="resume-modal__actions">
             <a
-              href="/resume.pdf"
-              download="Ujjwal_Pratap_Singh_Resume.pdf"
+              href={pdfPath}
+              download={downloadName}
               className="resume-modal__btn resume-modal__btn--primary"
               title="Download PDF"
             >
@@ -60,16 +70,16 @@ export default function ResumeModal({ onClose }: ResumeModalProps) {
 
         <div className="resume-modal__body">
           <object
-            data="/resume.pdf"
+            data={pdfPath}
             type="application/pdf"
             className="resume-modal__viewer"
           >
             <iframe
-              src="/resume.pdf"
+              src={pdfPath}
               className="resume-modal__viewer"
-              title="Ujjwal Pratap Singh Resume PDF"
+              title={`${title} PDF Viewer`}
             >
-              <p>Your browser does not support PDF viewing. <a href="/resume.pdf" download>Download the PDF</a> instead.</p>
+              <p>Your browser does not support PDF viewing. <a href={pdfPath} download>Download the PDF</a> instead.</p>
             </iframe>
           </object>
         </div>

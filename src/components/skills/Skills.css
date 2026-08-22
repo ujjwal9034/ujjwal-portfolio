@@ -46,8 +46,11 @@
   font-size: 0.875rem;
   color: var(--accent);
   width: 28px;
-  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
+  line-height: 1;
 }
 
 .skills__category-name {

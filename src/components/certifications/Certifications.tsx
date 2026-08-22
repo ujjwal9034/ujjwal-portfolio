@@ -29,7 +29,11 @@ function CertIcon({ type }: { type: string }) {
   );
 }
 
-export default function Certifications() {
+interface CertificationsProps {
+  onOpenDocument: (pdfPath: string, title: string, subtitle: string, downloadName: string) => void;
+}
+
+export default function Certifications({ onOpenDocument: _onOpenDocument }: CertificationsProps) {
   return (
     <section className="section certifications" aria-labelledby="certs-title">
       <div className="container">

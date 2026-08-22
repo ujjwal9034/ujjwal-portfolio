@@ -19,9 +19,21 @@ import { useTheme } from './hooks/useTheme';
 export default function App() {
   const [loading, setLoading] = useState(true);
   const [isResumeOpen, setResumeOpen] = useState(false);
+  const [modalProps, setModalProps] = useState<{
+    pdfPath?: string;
+    title?: string;
+    subtitle?: string;
+    downloadName?: string;
+  }>({});
   const { theme, toggleTheme } = useTheme();
 
   const openResume = useCallback(() => {
+    setModalProps({});
+    setResumeOpen(true);
+  }, []);
+
+  const openDocument = useCallback((pdfPath: string, title: string, subtitle: string, downloadName: string) => {
+    setModalProps({ pdfPath, title, subtitle, downloadName });
     setResumeOpen(true);
   }, []);
 
@@ -44,15 +56,21 @@ export default function App() {
             <EngineeringMindset />
             <Projects />
             <Skills />
-            <Journey />
-            <Certifications />
+            <Journey onOpenDocument={openDocument} />
+            <Certifications onOpenDocument={openDocument} />
             <Contact onOpenResume={openResume} />
           </main>
           <Footer onOpenResume={openResume} />
 
           <AnimatePresence>
             {isResumeOpen && (
-              <ResumeModal onClose={closeResume} />
+              <ResumeModal
+                pdfPath={modalProps.pdfPath}
+                title={modalProps.title}
+                subtitle={modalProps.subtitle}
+                downloadName={modalProps.downloadName}
+                onClose={closeResume}
+              />
             )}
           </AnimatePresence>
         </>

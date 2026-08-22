@@ -87,11 +87,18 @@
   }
 }
 
+.journey__doc-actions {
+  display: flex;
+  gap: var(--space-xs);
+  margin-top: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.journey__view-btn,
 .journey__download-btn {
   display: inline-flex;
   align-items: center;
   gap: var(--space-xs);
-  margin-top: var(--space-sm);
   padding: 6px 12px;
   background: var(--bg-secondary);
   border: 1px solid var(--border);
@@ -106,6 +113,7 @@
   transition: all var(--duration-fast) var(--ease-out);
 }
 
+.journey__view-btn:hover,
 .journey__download-btn:hover {
   background: var(--bg-tertiary);
   border-color: var(--accent);
@@ -113,6 +121,7 @@
   transform: translateY(-1px);
 }
 
+.journey__view-icon,
 .journey__download-icon {
   flex-shrink: 0;
   transition: transform var(--duration-fast) var(--ease-out);
