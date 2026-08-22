@@ -100,7 +100,7 @@ export const projects: Project[] = [
     ],
     technologies: ['Java', 'Java Swing'],
     concepts: ['Graph Algorithms (Dijkstra)', 'Model-View-Controller (MVC)', 'Inventory Optimization', 'Data Structures (Graphs, Trees)', 'Desktop GUI Architecture'],
-    github: 'https://github.com/ujjwal9034',
+    github: 'https://github.com/ujjwal9034/Warehouse-Management-System',
     color: '#3b82f6',
   },
   {
