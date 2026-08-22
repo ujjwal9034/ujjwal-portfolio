@@ -45,7 +45,9 @@
   font-family: var(--font-mono);
   font-size: 0.875rem;
   color: var(--accent);
-  width: 28px;
+  min-width: 28px;
+  width: auto;
+  white-space: nowrap;
   display: inline-flex;
   align-items: center;
   justify-content: center;
