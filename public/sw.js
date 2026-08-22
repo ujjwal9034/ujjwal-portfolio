@@ -4,7 +4,9 @@ const ASSETS = [
   '/index.html',
   '/favicon.svg',
   '/manifest.json',
-  '/resume.pdf'
+  '/resume.pdf',
+  '/marksheet_10th.pdf',
+  '/marksheet_12th.pdf'
 ];
 
 // Install Event

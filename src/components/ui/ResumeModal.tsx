@@ -2,21 +2,24 @@ import { motion } from 'framer-motion';
 import './ResumeModal.css';
 
 interface ResumeModalProps {
-  isOpen: boolean;
   onClose: () => void;
 }
 
-export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
-  if (!isOpen) return null;
-
+export default function ResumeModal({ onClose }: ResumeModalProps) {
   return (
-    <div className="resume-modal" role="dialog" aria-modal="true" aria-labelledby="resume-title">
+    <motion.div
+      className="resume-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="resume-title"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3 }}
+    >
       {/* Backdrop */}
-      <motion.div
+      <div
         className="resume-modal__backdrop"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
         onClick={onClose}
       />
 
@@ -71,6 +74,6 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
           </object>
         </div>
       </motion.div>
-    </div>
+    </motion.div>
   );
 }

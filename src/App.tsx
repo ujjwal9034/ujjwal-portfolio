@@ -52,7 +52,7 @@ export default function App() {
 
           <AnimatePresence>
             {isResumeOpen && (
-              <ResumeModal isOpen={isResumeOpen} onClose={closeResume} />
+              <ResumeModal onClose={closeResume} />
             )}
           </AnimatePresence>
         </>
