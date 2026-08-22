@@ -21,6 +21,13 @@ function CertIcon({ type }: { type: string }) {
       </svg>
     );
   }
+  if (type === 'internship') {
+    return (
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z" />
+      </svg>
+    );
+  }
   return (
     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
       <path d="M12 2L2.5 7.5v9L12 22l9.5-5.5v-9L12 2zm0 2.18l7.36 4.26v7.12L12 19.82l-7.36-4.26V8.44L12 4.18z" fill="currentColor" opacity="0.3"/>

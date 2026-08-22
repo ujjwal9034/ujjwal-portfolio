@@ -16,6 +16,7 @@ export default function ResumeModal({
   downloadName = 'Ujjwal_Pratap_Singh_Resume.pdf',
   onClose,
 }: ResumeModalProps) {
+  const isImage = /\.(png|jpe?g|webp|gif|svg)(\?.*)?$/i.test(pdfPath);
   return (
     <motion.div
       className="resume-modal"
@@ -69,19 +70,25 @@ export default function ResumeModal({
         </div>
 
         <div className="resume-modal__body">
-          <object
-            data={pdfPath}
-            type="application/pdf"
-            className="resume-modal__viewer"
-          >
-            <iframe
-              src={pdfPath}
+          {isImage ? (
+            <div className="resume-modal__image-container">
+              <img src={pdfPath} alt={title} className="resume-modal__image" />
+            </div>
+          ) : (
+            <object
+              data={pdfPath}
+              type="application/pdf"
               className="resume-modal__viewer"
-              title={`${title} PDF Viewer`}
             >
-              <p>Your browser does not support PDF viewing. <a href={pdfPath} download>Download the PDF</a> instead.</p>
-            </iframe>
-          </object>
+              <iframe
+                src={pdfPath}
+                className="resume-modal__viewer"
+                title={`${title} PDF Viewer`}
+              >
+                <p>Your browser does not support PDF viewing. <a href={pdfPath} download>Download the PDF</a> instead.</p>
+              </iframe>
+            </object>
+          )}
         </div>
       </motion.div>
     </motion.div>

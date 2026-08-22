@@ -182,6 +182,13 @@ export const timeline: TimelineEntry[] = [
     description: 'Designed compilation engines, routing network packet simulators, MVC-based desktop applications, and full-stack marketplaces.',
   },
   {
+    year: '2026',
+    title: 'AI-Assisted Full Stack Web Development Intern',
+    description: 'Completed a professional internship at Technology Business Incubator (TBI-GEU). Developed web systems utilizing AI-assisted workflows and full-stack architectures.',
+    downloadUrl: '/tbi_internship_certificate.jpg',
+    downloadLabel: 'TBI-GEU Internship Certificate',
+  },
+  {
     year: '2027',
     title: 'Graduation',
     description: 'B.Tech Computer Science degree completion at Graphic Era Deemed to Be University.',
@@ -189,6 +196,13 @@ export const timeline: TimelineEntry[] = [
 ];
 
 export const certifications: Certification[] = [
+  {
+    title: 'AI-Assisted Full Stack Web Development Intern',
+    issuer: 'Technology Business Incubator - Graphic Era University (TBI-GEU)',
+    icon: 'internship',
+    credentialUrl: '/tbi_internship_certificate.jpg',
+    credentialLabel: 'TBI-GEU Internship Certificate',
+  },
   {
     title: 'AWS Certified Cloud Practitioner',
     issuer: 'Amazon Web Services',
