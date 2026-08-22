@@ -1,0 +1,115 @@
+.contact__container {
+  display: flex;
+  justify-content: center;
+}
+
+.contact__content {
+  text-align: center;
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.contact__title {
+  font-family: var(--font-heading);
+  font-size: var(--font-display);
+  font-weight: 700;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--text-primary);
+}
+
+.contact__subtitle {
+  font-size: var(--font-body-lg);
+  color: var(--text-secondary);
+  line-height: var(--leading-normal);
+  max-width: 480px;
+}
+
+/* Email button */
+.contact__email-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  margin: var(--space-md) 0;
+}
+
+.contact__email-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-xl);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  transition: all var(--duration-normal) var(--ease-out);
+}
+.contact__email-btn:hover {
+  border-color: var(--accent);
+  background: var(--accent-glow);
+}
+
+.contact__email-text {
+  font-family: var(--font-mono);
+  font-size: var(--font-body-md);
+  color: var(--text-primary);
+}
+
+.contact__email-action {
+  color: var(--text-tertiary);
+  display: flex;
+  align-items: center;
+  transition: color var(--duration-fast);
+}
+.contact__email-btn:hover .contact__email-action {
+  color: var(--accent);
+}
+
+.contact__copied {
+  font-family: var(--font-mono);
+  font-size: var(--font-caption);
+  color: var(--accent);
+}
+
+/* Links */
+.contact__links {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.contact__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 0.625rem 1.25rem;
+  font-size: var(--font-body-md);
+  font-weight: 500;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  transition: all var(--duration-normal) var(--ease-out);
+  text-decoration: none;
+}
+.contact__link:hover {
+  color: var(--text-primary);
+  border-color: var(--text-tertiary);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 640px) {
+  .contact__email-text {
+    font-size: var(--font-caption);
+  }
+  .contact__links {
+    flex-direction: column;
+    width: 100%;
+  }
+  .contact__link {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,66 @@
+.cursor__dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  background-color: var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  transform: translate(-50%, -50%);
+  margin-top: -3px;
+  margin-left: -3px;
+}
+
+.cursor__ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  transform: translate(-50%, -50%);
+  margin-top: -12px;
+  margin-left: -12px;
+  transition: width 0.3s var(--ease-out),
+              height 0.3s var(--ease-out),
+              background-color 0.3s var(--ease-out),
+              border-color 0.3s var(--ease-out),
+              margin-top 0.3s var(--ease-out),
+              margin-left 0.3s var(--ease-out);
+}
+
+.cursor__ring--link {
+  width: 48px;
+  height: 48px;
+  background-color: var(--accent-glow);
+  border-color: var(--accent);
+  margin-top: -24px;
+  margin-left: -24px;
+}
+
+.cursor__ring--project {
+  width: 64px;
+  height: 64px;
+  background-color: var(--accent-glow-strong);
+  border-color: var(--accent-hover);
+  margin-top: -32px;
+  margin-left: -32px;
+}
+
+.cursor__ring--project::after {
+  content: 'VIEW';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.1em;
+}

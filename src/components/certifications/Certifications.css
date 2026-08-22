@@ -1,0 +1,82 @@
+.certs__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-lg);
+  margin-top: var(--space-3xl);
+}
+
+.certs__card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  padding: var(--space-xl) var(--space-xl);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all var(--duration-normal) var(--ease-out);
+}
+.certs__card:hover {
+  border-color: var(--border-accent);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-3px);
+}
+
+.certs__card-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  background: var(--accent-glow);
+  border-radius: var(--radius-md);
+}
+
+.certs__card-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+  min-width: 0;
+}
+
+.certs__card-title {
+  font-family: var(--font-heading);
+  font-size: var(--font-subheading);
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: var(--leading-snug);
+}
+
+.certs__card-issuer {
+  font-size: var(--font-caption);
+  color: var(--text-tertiary);
+}
+
+/* Shimmer effect on hover */
+.certs__card-shimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(245, 158, 11, 0.03) 45%,
+    rgba(245, 158, 11, 0.06) 50%,
+    rgba(245, 158, 11, 0.03) 55%,
+    transparent 60%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.6s var(--ease-out);
+  pointer-events: none;
+}
+.certs__card:hover .certs__card-shimmer {
+  transform: translateX(100%);
+}
+
+@media (max-width: 640px) {
+  .certs__grid {
+    grid-template-columns: 1fr;
+  }
+}
