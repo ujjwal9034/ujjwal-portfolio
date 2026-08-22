@@ -221,8 +221,8 @@ export const certifications: Certification[] = [
     title: 'Build a Secure Google Cloud Network',
     issuer: 'Google Cloud Network Security',
     icon: 'gcp',
-    credentialUrl: '/build_secure_google_cloud_network.pdf',
-    credentialLabel: 'Build a Secure Google Cloud Network Certificate',
+    credentialUrl: 'https://www.skills.google/public_profiles/3b09c3c6-1e31-489f-be22-6c5c1aef4219/badges/14555592?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share',
+    credentialLabel: 'Build a Secure Google Cloud Network Badge',
   },
 ];
 
