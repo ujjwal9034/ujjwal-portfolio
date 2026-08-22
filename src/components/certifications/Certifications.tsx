@@ -33,7 +33,7 @@ interface CertificationsProps {
   onOpenDocument: (pdfPath: string, title: string, subtitle: string, downloadName: string) => void;
 }
 
-export default function Certifications({ onOpenDocument: _onOpenDocument }: CertificationsProps) {
+export default function Certifications({ onOpenDocument }: CertificationsProps) {
   return (
     <section className="section certifications" aria-labelledby="certs-title">
       <div className="container">
@@ -57,6 +57,29 @@ export default function Certifications({ onOpenDocument: _onOpenDocument }: Cert
               whileInView="visible"
               viewport={{ once: true, margin: '-50px' }}
               variants={fadeInUp}
+              onClick={() => {
+                if (cert.credentialUrl) {
+                  onOpenDocument(
+                    cert.credentialUrl,
+                    cert.title,
+                    cert.issuer,
+                    cert.title.replace(/\s/g, '_') + '.pdf'
+                  );
+                }
+              }}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if ((e.key === 'Enter' || e.key === ' ') && cert.credentialUrl) {
+                  e.preventDefault();
+                  onOpenDocument(
+                    cert.credentialUrl,
+                    cert.title,
+                    cert.issuer,
+                    cert.title.replace(/\s/g, '_') + '.pdf'
+                  );
+                }
+              }}
             >
               <div className="certs__card-icon">
                 <CertIcon type={cert.icon} />

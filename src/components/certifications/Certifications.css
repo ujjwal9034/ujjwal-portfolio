@@ -15,6 +15,7 @@
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   overflow: hidden;
+  cursor: pointer;
   transition: all var(--duration-normal) var(--ease-out);
 }
 .certs__card:hover {

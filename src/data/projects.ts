@@ -193,16 +193,22 @@ export const certifications: Certification[] = [
     title: 'AWS Certified Cloud Practitioner',
     issuer: 'Amazon Web Services',
     icon: 'aws',
+    credentialUrl: '/aws_certified_cloud_practitioner.pdf',
+    credentialLabel: 'AWS Certified Cloud Practitioner Certificate',
   },
   {
     title: 'Google Cloud Computing Foundation',
     issuer: 'Google Cloud',
     icon: 'gcp',
+    credentialUrl: '/google_cloud_computing_foundation.pdf',
+    credentialLabel: 'Google Cloud Computing Foundation Certificate',
   },
   {
     title: 'Build a Secure Google Cloud Network',
     issuer: 'Google Cloud Network Security',
     icon: 'gcp',
+    credentialUrl: '/build_secure_google_cloud_network.pdf',
+    credentialLabel: 'Build a Secure Google Cloud Network Certificate',
   },
 ];
 

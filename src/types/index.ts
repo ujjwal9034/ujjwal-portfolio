@@ -26,6 +26,8 @@ export interface Certification {
   title: string;
   issuer: string;
   icon: string;
+  credentialUrl?: string;
+  credentialLabel?: string;
 }
 
 export interface SkillCategory {

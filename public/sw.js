@@ -7,7 +7,10 @@ const ASSETS = [
   '/resume.pdf',
   '/marksheet_10th.pdf',
   '/marksheet_12th.pdf',
-  '/btech_transcript.pdf'
+  '/btech_transcript.pdf',
+  '/aws_certified_cloud_practitioner.pdf',
+  '/google_cloud_computing_foundation.pdf',
+  '/build_secure_google_cloud_network.pdf'
 ];
 
 // Install Event
