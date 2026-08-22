@@ -214,8 +214,8 @@ export const certifications: Certification[] = [
     title: 'Google Cloud Computing Foundation',
     issuer: 'Google Cloud',
     icon: 'gcp',
-    credentialUrl: '/google_cloud_computing_foundation.pdf',
-    credentialLabel: 'Google Cloud Computing Foundation Certificate',
+    credentialUrl: 'https://www.credly.com/badges/1386d00a-906c-4bc0-b7a7-f351ff94d8df/linked_in_profile',
+    credentialLabel: 'Google Cloud Computing Foundation Badge',
   },
   {
     title: 'Build a Secure Google Cloud Network',

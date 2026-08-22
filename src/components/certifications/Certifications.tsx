@@ -66,12 +66,16 @@ export default function Certifications({ onOpenDocument }: CertificationsProps) 
               variants={fadeInUp}
               onClick={() => {
                 if (cert.credentialUrl) {
-                  onOpenDocument(
-                    cert.credentialUrl,
-                    cert.title,
-                    cert.issuer,
-                    cert.title.replace(/\s/g, '_') + '.pdf'
-                  );
+                  if (cert.credentialUrl.startsWith('http')) {
+                    window.open(cert.credentialUrl, '_blank', 'noopener,noreferrer');
+                  } else {
+                    onOpenDocument(
+                      cert.credentialUrl,
+                      cert.title,
+                      cert.issuer,
+                      cert.title.replace(/\s/g, '_') + '.pdf'
+                    );
+                  }
                 }
               }}
               role="button"
@@ -79,12 +83,16 @@ export default function Certifications({ onOpenDocument }: CertificationsProps) 
               onKeyDown={(e) => {
                 if ((e.key === 'Enter' || e.key === ' ') && cert.credentialUrl) {
                   e.preventDefault();
-                  onOpenDocument(
-                    cert.credentialUrl,
-                    cert.title,
-                    cert.issuer,
-                    cert.title.replace(/\s/g, '_') + '.pdf'
-                  );
+                  if (cert.credentialUrl.startsWith('http')) {
+                    window.open(cert.credentialUrl, '_blank', 'noopener,noreferrer');
+                  } else {
+                    onOpenDocument(
+                      cert.credentialUrl,
+                      cert.title,
+                      cert.issuer,
+                      cert.title.replace(/\s/g, '_') + '.pdf'
+                    );
+                  }
                 }
               }}
             >
